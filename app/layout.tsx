@@ -82,12 +82,12 @@ const interFont = Inter({
 export default function RootLayout({ children }: RootLayoutProps) {
    return (
       // Suprres hydration warning to remove errors caused by shadcn components
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning className="scroll-smooth">
          <ThemeProvider>
             <body
                className={cn(
                   "bg-background text-foreground", // 🧠
-                  "overflow-x-hidden overflow-y-auto",
+                  "overflow-x-hidden overflow-y-auto scroll-smooth",
                   interFont.className,
                )}
             >

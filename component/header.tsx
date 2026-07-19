@@ -5,6 +5,8 @@ import { ThemeToggler } from "./themeToggler";
 import { Button } from "./ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Code, Layout } from "lucide-react";
+import { ClassOnlyProps } from "@/type/component";
+import { cn } from "@/lib/util";
 
 const dataToRender: {
    href: string;
@@ -25,9 +27,9 @@ const dataToRender: {
    },
 ];
 
-export default function Header() {
+export default function Header({ className }: ClassOnlyProps) {
    return (
-      <header className="border-b border-b-foreground/10">
+      <header className={cn("border-b border-b-foreground/10", className)}>
          <div className="py-1.5 px-4 mx-auto max-w-2xl flex items-center justify-between">
             <Link href="/" className="shrink-0">
                <Image
