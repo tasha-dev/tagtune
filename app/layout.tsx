@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import "@/app/global.css";
 import { cn } from "@/lib/util";
 import { ThemeProvider } from "next-themes";
+import { TooltipProvider } from "@/component/ui/tooltip";
+import { Toaster } from "@/component/ui/sonner";
 
 export const metadata: Metadata = {
    title: {
@@ -89,7 +91,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   interFont.className,
                )}
             >
-               {children}
+               <Toaster />
+               <TooltipProvider>{children}</TooltipProvider>
             </body>
          </ThemeProvider>
       </html>
