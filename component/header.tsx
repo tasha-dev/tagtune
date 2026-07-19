@@ -30,7 +30,7 @@ const dataToRender: {
 export default function Header({ className }: ClassOnlyProps) {
    return (
       <header className={cn("border-b border-b-foreground/10", className)}>
-         <div className="py-1.5 px-4 mx-auto max-w-2xl flex items-center justify-between">
+         <div className="lg:py-1.5 py-2 px-4 mx-auto max-w-2xl flex items-center justify-between">
             <Link href="/" className="shrink-0">
                <Image
                   width={50}

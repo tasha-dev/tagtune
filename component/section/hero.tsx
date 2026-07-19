@@ -6,7 +6,7 @@ export default function Hero({ className }: ClassOnlyProps) {
    return (
       <section className={className}>
          <main className="max-w-2xl p-4 mx-auto lg:min-h-[calc(100vh-50px)] flex-col lg:flex items-center justify-center">
-            <div className="prose prose-neutral dark:prose-invert w-full max-w-full p-0 m-0 lg:mb-8 mb-4">
+            <div className="prose prose-neutral dark:prose-invert w-full max-w-full lg:mb-8 mb-4">
                <h3 className="lg:text-center">TagTune</h3>
                <h1 className="lg:text-center">Edit MP3 Metadata in Seconds</h1>
                <p className="lg:text-center">
