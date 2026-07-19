@@ -2,6 +2,8 @@ import { RootLayoutProps } from "@/type/component";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "@/app/global.css";
+import { cn } from "@/lib/util";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
    title: {
@@ -79,7 +81,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
    return (
       // Suprres hydration warning to remove errors caused by shadcn components
       <html lang="en" suppressHydrationWarning>
-         <body>{children}</body>
+         <ThemeProvider>
+            <body
+               className={cn(
+                  "bg-background text-foreground", // 🧠
+                  "overflow-x-hidden overflow-y-auto",
+                  interFont.className,
+               )}
+            >
+               {children}
+            </body>
+         </ThemeProvider>
       </html>
    );
 }
