@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎵 TagTune
 
-## Getting Started
+**TagTune** is a modern, privacy-first web application that lets you edit MP3 metadata, replace album artwork, preview songs, and build a personal music library—all directly in your browser.
 
-First, run the development server:
+No cloud storage. Your music stays on your device.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 📤 Upload MP3 files
+- ✏️ Edit ID3 metadata
+   - Title
+   - Artist
+   - Album
+   - Album Artist
+   - Genre
+   - Year
+   - Track Number
+   - Composer
+   - Lyrics
+   - Comments
+   - BPM
+   - Copyright
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🖼 Replace or remove album artwork
+- 🎧 Built-in music player with playback controls
+- 📚 Personal music library
+- 💾 Download the updated MP3 with embedded metadata
+- ⚡ Fast client-side processing
+- 🔒 Privacy-first — everything runs locally in your browser
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Frontend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
 
-## Deploy on Vercel
+### State Management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Zustand
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Forms
+
+- React Hook Form
+- Zod
+
+### Audio & Metadata
+
+- music-metadata
+- browser-id3-writer
+- HTML5 Audio API
+
+---
+
+## 🎯 Why TagTune?
+
+Most music tag editors are desktop applications with outdated interfaces. TagTune brings the same functionality to a modern web experience with a clean UI, instant editing, and complete privacy.
+
+Whether you're organizing your music collection or fixing incorrect metadata, TagTune makes the process fast and intuitive.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
