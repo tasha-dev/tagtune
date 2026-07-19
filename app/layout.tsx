@@ -37,14 +37,14 @@ export const metadata: Metadata = {
    creator: "Mahdi Tasha",
    publisher: "Mahdi Tasha",
    applicationName: "TagTune",
-   // metadataBase: new URL("https://tagtune.vercel.app"),
+   metadataBase: new URL("https://tagtune-five.vercel.app"),
    alternates: {
       canonical: "/",
    },
    openGraph: {
       type: "website",
       locale: "en_US",
-      // url: "https://tagtune.vercel.app",
+      url: "https://tagtune-five.vercel.app",
       title: "TagTune",
       description:
          "Edit MP3 metadata, update album artwork, organize your music library, and download updated files—all locally in your browser.",
