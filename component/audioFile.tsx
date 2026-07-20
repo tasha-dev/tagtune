@@ -2,11 +2,17 @@
 
 import { bytesToMB, cn } from "@/lib/util";
 import { AudioFileProps } from "@/type/component";
-import { Pen, Play, Trash } from "lucide-react";
+import { Pause, Pen, Play, Trash } from "lucide-react";
 import { Button } from "./ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import playbackStore from "@/store/playback";
+import filesStore from "@/store/files";
 
 export default function AudioFile({ file, className }: AudioFileProps) {
+  const { togglePlay, currentPlayingID } = playbackStore();
+  const { removeFile } = filesStore();
+  const isPlaying = file.id === currentPlayingID;
+
   return (
     <div
       className={cn(
@@ -15,8 +21,16 @@ export default function AudioFile({ file, className }: AudioFileProps) {
       )}
     >
       <div className="flex-1 flex overflow-hidden gap-2">
-        <Button size="icon" className={"shrink-0"}>
-          <Play className="fill-current" />
+        <Button
+          size="icon"
+          className={"shrink-0"}
+          onClick={() => togglePlay(file.id)}
+        >
+          {!isPlaying ? (
+            <Play className="fill-current" />
+          ) : (
+            <Pause className="fill-current" />
+          )}
         </Button>
         <div className="flex-1 overflow-hidden">
           <span className="font-heading text-sm leading-normal font-medium block truncate">
@@ -41,7 +55,16 @@ export default function AudioFile({ file, className }: AudioFileProps) {
         <Tooltip>
           <TooltipTrigger
             render={
-              <Button size="icon" variant="destructive">
+              <Button
+                size="icon"
+                variant="destructive"
+                onClick={() => {
+                  removeFile(file.id);
+                  if (isPlaying) {
+                    togglePlay(file.id);
+                  }
+                }}
+              >
                 <Trash />
               </Button>
             }

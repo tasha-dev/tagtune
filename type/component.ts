@@ -1,3 +1,5 @@
+import { FileStoreMediaType } from "./store";
+
 export interface RootLayoutProps {
   children: React.ReactNode;
 }
@@ -18,5 +20,5 @@ export interface DropzoneProps {
 
 export interface AudioFileProps {
   className?: string;
-  file: File;
+  file: FileStoreMediaType;
 }

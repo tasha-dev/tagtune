@@ -1,5 +1,6 @@
 export interface FileStoreMediaType extends File {
   id: string;
+  playbackURL: string;
 }
 
 export interface FilesStoreType {

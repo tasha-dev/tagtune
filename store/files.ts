@@ -11,6 +11,7 @@ const filesStore = create<FilesStoreType>((set, get) => ({
           (item) =>
             Object.assign(item, {
               id: crypto.randomUUID(),
+              playbackURL: URL.createObjectURL(item),
             }) as FileStoreMediaType,
         ),
       ],
