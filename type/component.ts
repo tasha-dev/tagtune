@@ -14,7 +14,6 @@ export interface ErrorPageProps {
 export interface DropzoneProps {
   className?: string;
   onFilesChange?: (files: File[]) => void;
-  files?: File[];
 }
 
 export interface AudioFileProps {

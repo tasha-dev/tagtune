@@ -18,7 +18,7 @@ export default function AudioFile({ file, className }: AudioFileProps) {
         <Button size="icon" className={"shrink-0"}>
           <Play className="fill-current" />
         </Button>
-        <div className="flex-1">
+        <div className="flex-1 overflow-hidden">
           <span className="font-heading text-sm leading-normal font-medium block truncate">
             {file.name}
           </span>

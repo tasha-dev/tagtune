@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/component/footer";
 import Header from "@/component/header";
-import Dropzone from "@/component/dropzone";
+import AppContainer from "@/component/container/appContainer";
 
 export const metadata: Metadata = {
   title: "App",
@@ -15,7 +15,7 @@ export default function AppPage() {
         <div className="prose prose-neutral dark:prose-invert max-w-full w-full mb-5">
           <h1>Upload</h1>
         </div>
-        <Dropzone />
+        <AppContainer />
       </section>
       <Footer />
     </>
