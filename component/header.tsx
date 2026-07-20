@@ -9,54 +9,54 @@ import { ClassOnlyProps } from "@/type/component";
 import { cn } from "@/lib/util";
 
 const dataToRender: {
-   href: string;
-   label: string;
-   icon: React.ReactNode;
-   variant?: "outline" | "default";
+  href: string;
+  label: string;
+  icon: React.ReactNode;
+  variant?: "outline" | "default";
 }[] = [
-   {
-      href: "https://github.com/tasha-dev",
-      label: "GitHub",
-      icon: <Code />,
-      variant: "outline",
-   },
-   {
-      href: "/app",
-      label: "Start Using",
-      icon: <Layout />,
-   },
+  {
+    href: "https://github.com/tasha-dev",
+    label: "GitHub",
+    icon: <Code />,
+    variant: "outline",
+  },
+  {
+    href: "/app",
+    label: "Start Using",
+    icon: <Layout />,
+  },
 ];
 
 export default function Header({ className }: ClassOnlyProps) {
-   return (
-      <header className={cn("border-b border-b-foreground/10", className)}>
-         <div className="lg:py-1.5 py-2 px-4 mx-auto max-w-2xl flex items-center justify-between">
-            <Link href="/" className="shrink-0">
-               <Image
-                  width={50}
-                  height={50}
-                  alt="Logo"
-                  src={LogoImage.src}
-                  className="size-9"
-               />
-            </Link>
-            <nav className="flex items-center justify-end gap-2 flex-1">
-               <ThemeToggler />
-               {dataToRender.map((item, index) => (
-                  <Tooltip key={index}>
-                     <TooltipTrigger
-                        render={
-                           <Button
-                              variant={item.variant}
-                              render={<Link href={item.href}>{item.icon}</Link>}
-                           />
-                        }
-                     />
-                     <TooltipContent>{item.label}</TooltipContent>
-                  </Tooltip>
-               ))}
-            </nav>
-         </div>
-      </header>
-   );
+  return (
+    <header className={cn("border-b border-b-foreground/10", className)}>
+      <div className="lg:py-1.5 py-2 px-4 mx-auto max-w-2xl flex items-center justify-between">
+        <Link href="/" className="shrink-0">
+          <Image
+            width={50}
+            height={50}
+            alt="Logo"
+            src={LogoImage.src}
+            className="size-9"
+          />
+        </Link>
+        <nav className="flex items-center justify-end gap-1 flex-1">
+          <ThemeToggler />
+          {dataToRender.map((item, index) => (
+            <Tooltip key={index}>
+              <TooltipTrigger
+                render={
+                  <Button
+                    variant={item.variant}
+                    render={<Link href={item.href}>{item.icon}</Link>}
+                  />
+                }
+              />
+              <TooltipContent>{item.label}</TooltipContent>
+            </Tooltip>
+          ))}
+        </nav>
+      </div>
+    </header>
+  );
 }
