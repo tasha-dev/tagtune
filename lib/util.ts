@@ -14,3 +14,11 @@ export function bytesToMB(bytes: number) {
 }
 
 export const mbToBytes = (mb: number) => mb * 1024 * 1024;
+export function getPlaybackPercentage(
+  currentTime: number,
+  duration: number,
+): number {
+  if (!duration || duration <= 0 || !isFinite(duration)) return 0;
+  const percent = (currentTime / duration) * 100;
+  return Math.min(100, Math.max(0, percent));
+}
