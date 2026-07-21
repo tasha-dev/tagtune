@@ -1,6 +1,6 @@
 "use client";
 
-import { cn, getPlaybackPercentage } from "@/lib/util";
+import { cn, getPlaybackPercentage, removeAudioFormat } from "@/lib/util";
 import filesStore from "@/store/files";
 import playbackStore from "@/store/playback";
 import { ClassOnlyProps } from "@/type/component";
@@ -22,7 +22,6 @@ export default function MusicPlayer({ className }: ClassOnlyProps) {
     setAudioCurrentTime(e.currentTarget.currentTime);
 
   const playingAudio = files.find((item) => item.id === currentPlayingID);
-  const audioElement = audioRef.current;
   const indexOfPlayingAudio = playingAudio && files.indexOf(playingAudio);
   const nextAudio = indexOfPlayingAudio && files[indexOfPlayingAudio + 1];
   const prevAudio = indexOfPlayingAudio && files[indexOfPlayingAudio - 1];
@@ -84,7 +83,7 @@ export default function MusicPlayer({ className }: ClassOnlyProps) {
           <div className="max-w-2xl mx-auto p-4 flex items-center justify-between gap-3 relative z-10">
             <div className="flex-1">
               <span className="font-heading text-sm leading-normal font-medium block truncate mb-2">
-                {playingAudio.name}
+                {removeAudioFormat(playingAudio.name)}
               </span>
               <Slider
                 className={"w-full"}

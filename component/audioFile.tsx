@@ -1,12 +1,13 @@
 "use client";
 
-import { bytesToMB, cn } from "@/lib/util";
+import { bytesToMB, cn, removeAudioFormat } from "@/lib/util";
 import { AudioFileProps } from "@/type/component";
-import { Pause, Pen, Play, Trash } from "lucide-react";
+import { Pause, Play, Trash } from "lucide-react";
 import { Button } from "./ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import playbackStore from "@/store/playback";
 import filesStore from "@/store/files";
+import EditAudioMetadataDialog from "./dialog/editAudioMetadata";
 
 export default function AudioFile({ file, className }: AudioFileProps) {
   const { togglePlay, currentPlayingID } = playbackStore();
@@ -34,7 +35,7 @@ export default function AudioFile({ file, className }: AudioFileProps) {
         </Button>
         <div className="flex-1 overflow-hidden">
           <span className="font-heading text-sm leading-normal font-medium block truncate">
-            {file.name}
+            {removeAudioFormat(file.name)}
           </span>
           <span className="text-xs text-muted-foreground block">
             {bytesToMB(file.size)} MB
@@ -42,16 +43,7 @@ export default function AudioFile({ file, className }: AudioFileProps) {
         </div>
       </div>
       <div className="shrink-0 flex gap-1">
-        <Tooltip>
-          <TooltipTrigger
-            render={
-              <Button size={"icon"} variant={"secondary"}>
-                <Pen />
-              </Button>
-            }
-          />
-          <TooltipContent>Edit metadata of the audio file</TooltipContent>
-        </Tooltip>
+        <EditAudioMetadataDialog file={file} />
         <Tooltip>
           <TooltipTrigger
             render={

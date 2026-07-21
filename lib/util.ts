@@ -22,3 +22,10 @@ export function getPlaybackPercentage(
   const percent = (currentTime / duration) * 100;
   return Math.min(100, Math.max(0, percent));
 }
+
+export function removeAudioFormat(name: string) {
+  const lastIndexOfDot = name.lastIndexOf(".");
+  const slicedName = name.slice(0, lastIndexOfDot);
+
+  return slicedName;
+}

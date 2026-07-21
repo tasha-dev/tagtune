@@ -22,3 +22,8 @@ export interface AudioFileProps {
   className?: string;
   file: FileStoreMediaType;
 }
+
+export interface EditAudioMetadataDialogProps {
+  className?: string;
+  file: FileStoreMediaType;
+}
